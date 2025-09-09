@@ -12,8 +12,6 @@
 
 ## Project Structure
 
-de-intern-ai/ │ ├── app/ │ ├── init.py │ ├── config/ │ ├── data/ # CSV data for training │ ├── models/ # Database models and extensions │ ├── routes/ # API, UI, and training routers │ └── services/ # Business logic, ML, transformers, etc. │ ├── documents/ # Project documentation ├── requirements.txt ├── run.py # App entrypoint (for Flask dev mode) └── .env
-
 2. Run the API server (recommended)
    Or, for Flask-style dev mode (not recommended for FastAPI):
 3. Access API Docs & UI
@@ -44,8 +42,6 @@ MIT License
 Authors
 Your Name Here
 update to file
-
-## de-intern-ai/ │ ├── app/ │ ├── init.py │ ├── config/ │ ├── data/ # CSV data for training │ ├── models/ # Database models and extensions │ ├── routes/ # API, UI, and training routers │ └── services/ # Business logic, ML, transformers, etc. │ ├── documents/ # Project documentation ├── requirements.txt ├── run.py # App entrypoint (for Flask dev mode) └── .env
 
 ## Quick Start
 
