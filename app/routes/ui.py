@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, UploadFile, File
 from fastapi.responses import HTMLResponse
 
 ui_router = APIRouter()
@@ -32,6 +32,23 @@ async def analyze_ui():
         </form>
         <h3>Result:</h3>
         <pre id="result"></pre>
+        <hr>
+        <h2>Update Training Data</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label>Model Type:</label>
+            <select name="model_type">
+                <option value="RandomForest">RandomForest</option>
+                <option value="NeuralNetwork">NeuralNetwork</option>
+                <option value="XGBoost">XGBoost</option>
+            </select><br/>
+            <label>Target Column:</label>
+            <input type="text" name="target_column" value="target" /><br/>
+            <label>CSV File:</label>
+            <input type="file" name="file" accept=".csv" /><br/>
+            <button type="button" onclick="uploadFile()">Upload & Train</button>
+        </form>
+        <h3>Training Result:</h3>
+        <pre id="trainResult"></pre>
         <script>
         async function submitForm() {
             const form = document.getElementById('analyzeForm');
@@ -52,6 +69,29 @@ async def analyze_ui():
             });
             const result = await res.json();
             document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+        }
+
+        async function uploadFile() {
+            const form = document.getElementById('uploadForm');
+            const model_type = form.model_type.value;
+            const target_column = form.target_column.value;
+            const fileInput = form.file;
+            if (!fileInput.files.length) {
+                document.getElementById('trainResult').innerText = "Please select a CSV file!";
+                return;
+            }
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append("model_type", model_type);
+            formData.append("target_column", target_column);
+            formData.append("file", file);
+
+            const res = await fetch('/train-with-file', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await res.json();
+            document.getElementById('trainResult').innerText = JSON.stringify(result, null, 2);
         }
         </script>
     </body>
