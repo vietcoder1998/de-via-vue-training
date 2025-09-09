@@ -1,8 +1,8 @@
 from typing import Any, Dict
-from app.services.transformer import DataTransformer
-from app.services.via import VIA
-from app.services.vua import VUA
-from app.services.ml import MLModels
+from app.services.layer_1.transformer import DataTransformer
+from app.services.layer_2.via import VIA
+from app.services.layer_2.vua import VUA
+from app.services.layer_3.ml import MLModels
 
 class AnalysisService:
     def __init__(self):
