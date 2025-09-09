@@ -3,7 +3,10 @@ from fastapi.responses import HTMLResponse
 
 ui_router = APIRouter()
 
-@ui_router.get("/analyze-ui", response_class=HTMLResponse, summary="Demo UI for /analyze")
+
+@ui_router.get(
+    "/analyze-ui", response_class=HTMLResponse, summary="Demo UI for /analyze"
+)
 async def analyze_ui():
     """A simple HTML UI for trying the /analyze endpoint."""
     return """
