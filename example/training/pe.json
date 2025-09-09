@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "earnings_per_share": 5.0,
+            "earnings_growth_rate": 0.08,
+            "sector_avg_pe": 15.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.6,
+            "return_on_equity": 0.15,
+            "industry": "Technology",
+            "target_pe": 20.5
+        },
+        {
+            "earnings_per_share": 3.2,
+            "earnings_growth_rate": 0.12,
+            "sector_avg_pe": 22.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.4,
+            "return_on_equity": 0.18,
+            "industry": "Healthcare",
+            "target_pe": 25.8
+        },
+        {
+            "earnings_per_share": 8.5,
+            "earnings_growth_rate": 0.03,
+            "sector_avg_pe": 12.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.8,
+            "return_on_equity": 0.12,
+            "industry": "Utilities",
+            "target_pe": 14.2
+        },
+        {
+            "earnings_per_share": 4.2,
+            "earnings_growth_rate": 0.05,
+            "sector_avg_pe": 14.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.7,
+            "return_on_equity": 0.13,
+            "industry": "Consumer Goods",
+            "target_pe": 16.5
+        },
+        {
+            "earnings_per_share": 2.1,
+            "earnings_growth_rate": 0.15,
+            "sector_avg_pe": 25.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.3,
+            "return_on_equity": 0.20,
+            "industry": "Technology",
+            "target_pe": 28.7
+        },
+        {
+            "earnings_per_share": 6.8,
+            "earnings_growth_rate": 0.04,
+            "sector_avg_pe": 13.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.75,
+            "return_on_equity": 0.11,
+            "industry": "Financial",
+            "target_pe": 15.3
+        },
+        {
+            "earnings_per_share": 3.5,
+            "earnings_growth_rate": 0.09,
+            "sector_avg_pe": 18.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.5,
+            "return_on_equity": 0.17,
+            "industry": "Consumer Goods",
+            "target_pe": 21.6
+        },
+        {
+            "earnings_per_share": 1.8,
+            "earnings_growth_rate": 0.18,
+            "sector_avg_pe": 30.0,
+            "market_avg_pe": 18.0,
+            "debt_to_equity": 0.25,
+            "return_on_equity": 0.22,
+            "industry": "Technology",
+            "target_pe": 32.4
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+{
+    "data": [
+        {
+            "free_cash_flow": [
+                100,
+                110,
+                121,
+                133.1,
+                146.41
+            ],
+            "terminal_growth_rate": 0.02,
+            "discount_rate": 0.10,
+            "shares_outstanding": 10,
+            "net_debt": 50,
+            "target_value": 145.0
+        },
+        {
+            "free_cash_flow": [
+                200,
+                220,
+                242,
+                266.2,
+                292.82
+            ],
+            "terminal_growth_rate": 0.03,
+            "discount_rate": 0.09,
+            "shares_outstanding": 20,
+            "net_debt": 100,
+            "target_value": 165.0
+        },
+        {
+            "free_cash_flow": [
+                500,
+                525,
+                551.25,
+                578.81,
+                607.75
+            ],
+            "terminal_growth_rate": 0.01,
+            "discount_rate": 0.11,
+            "shares_outstanding": 50,
+            "net_debt": 200,
+            "target_value": 115.5
+        },
+        {
+            "free_cash_flow": [
+                80,
+                96,
+                115.2,
+                138.24,
+                165.89
+            ],
+            "terminal_growth_rate": 0.04,
+            "discount_rate": 0.08,
+            "shares_outstanding": 8,
+            "net_debt": 30,
+            "target_value": 188.2
+        },
+        {
+            "free_cash_flow": [
+                250,
+                262.5,
+                275.63,
+                289.41,
+                303.88
+            ],
+            "terminal_growth_rate": 0.015,
+            "discount_rate": 0.12,
+            "shares_outstanding": 25,
+            "net_debt": 120,
+            "target_value": 98.7
+        },
+        {
+            "free_cash_flow": [
+                150,
+                172.5,
+                198.38,
+                228.13,
+                262.35
+            ],
+            "terminal_growth_rate": 0.035,
+            "discount_rate": 0.095,
+            "shares_outstanding": 15,
+            "net_debt": 70,
+            "target_value": 156.8
+        },
+        {
+            "free_cash_flow": [
+                300,
+                315,
+                330.75,
+                347.29,
+                364.65
+            ],
+            "terminal_growth_rate": 0.02,
+            "discount_rate": 0.105,
+            "shares_outstanding": 30,
+            "net_debt": 150,
+            "target_value": 125.3
+        },
+        {
+            "free_cash_flow": [
+                450,
+                472.5,
+                496.13,
+                520.93,
+                546.98
+            ],
+            "terminal_growth_rate": 0.025,
+            "discount_rate": 0.115,
+            "shares_outstanding": 45,
+            "net_debt": 180,
+            "target_value": 132.4
+        }
+    ]
+}

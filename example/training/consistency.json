@@ -1,0 +1,140 @@
+{
+    "data": [
+        {
+            "model_predictions": [
+                105.2,
+                106.8,
+                104.5,
+                107.3,
+                105.9
+            ],
+            "actual_values": [
+                105.0,
+                107.0,
+                104.0,
+                108.0,
+                106.0
+            ],
+            "consistency_score": 0.95
+        },
+        {
+            "model_predictions": [
+                82.3,
+                84.7,
+                79.8,
+                88.2,
+                86.1
+            ],
+            "actual_values": [
+                85.0,
+                87.0,
+                80.0,
+                89.0,
+                91.0
+            ],
+            "consistency_score": 0.88
+        },
+        {
+            "model_predictions": [
+                210.5,
+                215.2,
+                208.7,
+                212.9,
+                209.8
+            ],
+            "actual_values": [
+                212.0,
+                214.0,
+                209.0,
+                211.0,
+                210.0
+            ],
+            "consistency_score": 0.97
+        },
+        {
+            "model_predictions": [
+                45.2,
+                48.7,
+                43.1,
+                44.9,
+                46.5
+            ],
+            "actual_values": [
+                40.0,
+                45.0,
+                42.0,
+                39.0,
+                43.0
+            ],
+            "consistency_score": 0.75
+        },
+        {
+            "model_predictions": [
+                125.6,
+                130.2,
+                128.7,
+                132.5,
+                129.8
+            ],
+            "actual_values": [
+                127.0,
+                129.0,
+                130.0,
+                132.0,
+                128.0
+            ],
+            "consistency_score": 0.94
+        },
+        {
+            "model_predictions": [
+                68.3,
+                72.1,
+                65.9,
+                70.5,
+                67.8
+            ],
+            "actual_values": [
+                75.0,
+                78.0,
+                72.0,
+                74.0,
+                76.0
+            ],
+            "consistency_score": 0.82
+        },
+        {
+            "model_predictions": [
+                95.6,
+                98.2,
+                94.7,
+                99.3,
+                97.1
+            ],
+            "actual_values": [
+                96.0,
+                98.0,
+                95.0,
+                99.0,
+                97.0
+            ],
+            "consistency_score": 0.98
+        },
+        {
+            "model_predictions": [
+                155.3,
+                162.8,
+                148.7,
+                165.2,
+                157.9
+            ],
+            "actual_values": [
+                140.0,
+                150.0,
+                145.0,
+                155.0,
+                148.0
+            ],
+            "consistency_score": 0.78
+        }
+    ]
+}
