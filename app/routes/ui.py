@@ -19,6 +19,7 @@ async def analyze_ui():
                 <option value="DCF">DCF</option>
                 <option value="Abnormal Finding">Abnormal Finding</option>
                 <option value="Model Consistency">Model Consistency</option>
+                <option value="WACC">WACC</option>
             </select><br/>
             <label>Model Type:</label>
             <select name="model_type">
@@ -32,6 +33,28 @@ async def analyze_ui():
         </form>
         <h3>Result:</h3>
         <pre id="result"></pre>
+        <hr>
+        <h2>Batch Analyze CSV</h2>
+        <form id="batchForm" enctype="multipart/form-data">
+            <label>Task:</label>
+            <select name="task">
+                <option value="DCF">DCF</option>
+                <option value="Abnormal Finding">Abnormal Finding</option>
+                <option value="Model Consistency">Model Consistency</option>
+                <option value="WACC">WACC</option>
+            </select><br/>
+            <label>Model Type:</label>
+            <select name="model_type">
+                <option value="RandomForest">RandomForest</option>
+                <option value="NeuralNetwork">NeuralNetwork</option>
+                <option value="XGBoost">XGBoost</option>
+            </select><br/>
+            <label>CSV File:</label>
+            <input type="file" name="file" accept=".csv" /><br/>
+            <button type="button" onclick="batchAnalyze()">Batch Analyze</button>
+        </form>
+        <h3>Batch Analyze Result:</h3>
+        <pre id="batchResult"></pre>
         <hr>
         <h2>Update Training Data</h2>
         <form id="uploadForm" enctype="multipart/form-data">
@@ -69,6 +92,29 @@ async def analyze_ui():
             });
             const result = await res.json();
             document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+        }
+
+        async function batchAnalyze() {
+            const form = document.getElementById('batchForm');
+            const task = form.task.value;
+            const model_type = form.model_type.value;
+            const fileInput = form.file;
+            if (!fileInput.files.length) {
+                document.getElementById('batchResult').innerText = "Please select a CSV file!";
+                return;
+            }
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append("task", task);
+            formData.append("model_type", model_type);
+            formData.append("file", file);
+
+            const res = await fetch('/analyze-csv', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await res.json();
+            document.getElementById('batchResult').innerText = JSON.stringify(result, null, 2);
         }
 
         async function uploadFile() {

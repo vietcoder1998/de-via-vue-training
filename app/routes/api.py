@@ -3,11 +3,13 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from typing import Any, Dict, List
 from app.services.layer_2.analysis import AnalysisService
+from app.services.layer_1.transformer import DataTransformer
 import csv
 import io
 
 main_router = APIRouter()
 service = AnalysisService()
+transformer = DataTransformer()
 
 class AnalyzeRequest(BaseModel):
     task: str = Field(..., example="DCF")
@@ -91,6 +93,7 @@ async def analyze(request: AnalyzeRequest = Body(...)):
     description="""
     Upload a CSV file and run analysis for each row.
     The CSV header must match the expected data fields (e.g. free_cash_flow, terminal_growth_rate, ...).
+    This endpoint is for **batch analysis** (not for model training).
     """,
 )
 async def analyze_csv(
@@ -98,26 +101,23 @@ async def analyze_csv(
     model_type: str = Body(..., embed=True, example="RandomForest"),
     file: UploadFile = File(...)
 ):
-    # Read CSV file
+    """
+    Analyze multiple cases from a CSV file. Each row will be transformed and analyzed.
+    This does NOT train the model, it only runs predictions/analysis.
+    """
     content = await file.read()
     decoded = content.decode("utf-8")
-    reader = csv.DictReader(io.StringIO(decoded))
+    # Use transformer to parse CSV to JSON
+    if task.lower() == "consistency":
+        rows = transformer.csv_to_json_consistency(io.StringIO(decoded))
+    elif task.lower() in ["abnormal finding", "dcf"]:
+        rows = transformer.csv_to_json_abnormal(io.StringIO(decoded))
+    elif task.lower() == "wacc":
+        rows = transformer.csv_to_json_wacc(io.StringIO(decoded))
+    else:
+        rows = transformer.csv_to_json_abnormal(io.StringIO(decoded))
     results = []
-    for row in reader:
-        # Convert numeric fields
-        data = {}
-        for k, v in row.items():
-            # Try to parse lists (for free_cash_flow)
-            if "[" in v and "]" in v:
-                try:
-                    data[k] = [float(x) for x in v.strip("[]").split(",")]
-                except Exception:
-                    data[k] = v
-            else:
-                try:
-                    data[k] = float(v)
-                except Exception:
-                    data[k] = v
+    for data in rows:
         req = {"task": task, "model_type": model_type, "data": data}
         result = await service.handle_request(req)
         results.append(result)
